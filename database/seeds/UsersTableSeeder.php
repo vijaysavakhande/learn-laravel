@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Models\User;
 use App\Models\Phone;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 /**
@@ -17,6 +18,7 @@ class UsersTableSeeder extends Seeder
     {
         factory(User::class, 10)->create()->each(function ($user) {
             $user->phone()->save(factory(Phone::class)->make());
+            $user->posts()->save(factory(Post::class)->make());
         });
     }
 }

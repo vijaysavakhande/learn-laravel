@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Http\Models\User;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -29,7 +29,7 @@ class Phone extends Model
      * if our parent model i.e. User does not use "id" as its primary key, or we wish to join the model to a different column, we may pass a third argument to the belongsTo method
      * @return void
      *
-     * belongsTo(UserModel::class, foreign_key_for_userid_phone_model, primary_key_of_user_table)
+     * belongsTo(ParentModel::class, child table foreign key, Parent table primary key)
      */
     public function user()
     {
