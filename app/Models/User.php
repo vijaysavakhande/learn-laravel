@@ -72,4 +72,14 @@ class User extends Authenticatable
 
         return $this->api_token;
     }
+
+    /**
+     * comments
+     *
+     * @return void
+     */
+    public function comments()
+    {
+        return $this->hasManyThrough(Comment::class, Post::class, 'user_id', 'post_id', 'id', 'id');
+    }
 }

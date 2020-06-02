@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Course;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
-class PostController extends Controller
+class CourseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return new JsonResponse(Post::with('tags')->paginate());
+        //
     }
 
     /**
@@ -25,6 +24,7 @@ class PostController extends Controller
      */
     public function create()
     {
+        //
     }
 
     /**
@@ -35,47 +35,51 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Course  $course
      * @return \Illuminate\Http\Response
-     */// code...
-
-    public function show(Post $post)
+     */
+    public function show(Course $course)
     {
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(Course $course)
     {
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Post  $post
+     * @param  \App\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Course $course)
     {
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(Course $course)
     {
+        //
     }
 }

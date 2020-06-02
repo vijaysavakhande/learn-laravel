@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::with('posts')->paginate();
+        $user = User::with('comments')->paginate();
 
         return new JsonResponse($user);
     }

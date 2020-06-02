@@ -23,3 +23,4 @@ Route::resource('/users', 'Users\UserController');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout');
 Route::resource('/posts', 'PostController');
+Route::resource('tags', 'TagController');

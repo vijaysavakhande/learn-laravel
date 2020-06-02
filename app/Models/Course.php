@@ -4,19 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * Comment
- */
-class Comment extends Model
+class Course extends Model
 {
     /**
-     * table
      *
      * @var string
      */
-    protected $table = 'comments';
+    protected $table = 'courses';
+
     /**
-     * guarded
      *
      * @var array
      */
