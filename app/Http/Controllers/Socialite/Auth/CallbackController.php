@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Socialite\Auth;
 use App\Http\Controllers\Controller;
 use App\User;
 use Carbon\Carbon;
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Contracts\User as ContractsUser;
 use Laravel\Socialite\Facades\Socialite;
@@ -20,19 +21,21 @@ class CallbackController extends Controller
     {
         $user = Socialite::driver($provider)->user();
         $user = $this->createUser($user, $provider);
-        // auth()->login($user);
+        auth()->login($user);
 
         return redirect()->to('/home');
     }
 
     /**
-     * Show the form for creating a new resource.
+     * createUser
      *
-     * @return \Illuminate\Http\Response
+     * @param  mixed $user
+     * @param  mixed $provider
+     * @return Authenticatable
      */
-    public function createUser(ContractsUser $user, $provider)
+    public function createUser(ContractsUser $user, $provider): Authenticatable
     {
-        $user = User::firstOrNew([
+        $user = User::firstOrCreate(['email'=>$user->email],[
             'name' => $user->name,
             'email' => $user->email,
             'email_verified_at' => Carbon::now()->toDateTimeString(),
